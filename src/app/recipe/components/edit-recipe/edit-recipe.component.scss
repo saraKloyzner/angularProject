@@ -1,0 +1,131 @@
+
+
+// // @import "mdb-angular-ui-kit/assets/scss/mdb.scss";
+// // @import '@fortawesome/fontawesome-free/css/all.css';
+
+// // .edit-recipe-form {
+// //     background-color: #fff;
+// //     border-radius: 4px;
+// //     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+// //     padding: 20px;
+  
+// //     .button-container {
+// //       margin-top: 20px;
+// //       display: flex;
+// //       justify-content: space-between;
+// //     }
+// //   }
+  
+// //   .mdb-card-header {
+// //     background-color: #3f51b5;
+// //     color: #fff;
+// //   }
+  
+// //   .mdb-input-container {
+// //     margin-bottom: 15px;
+// //   }
+  
+// //   .mdb-select {
+// //     width: 100%;
+// //   }
+  
+// //   button {
+// //     width: 100%;
+// //   }
+
+
+// // Import Bootstrap
+
+
+// // Custom styles
+
+
+// // Custom styles
+// .container {
+//   max-width: 600px;
+//   margin: auto;
+//   padding: 20px;
+
+//   .edit-recipe-form {
+//     background-color:  #bbbfbb; // רקע ירוק
+
+//     .card-header {
+//       background-color: #f8f9fa;
+//       border-bottom: none;
+//     }
+
+//     .card-title {
+//       margin-bottom: 0;
+//     }
+
+//     .card-body {
+//       .form-label {
+//         font-weight: bold;
+//       }
+
+//       .invalid-feedback {
+//         display: block;
+//         margin-top: 5px;
+//         color: #dc3545;
+//       }
+
+//       .button-container {
+//         margin-top: 20px;
+//         text-align: center;
+
+//         button {
+//           margin-right: 10px;
+//         }
+
+//         .btn-primary {
+//           background-color: #05290d; // גוון ירוק אפור
+//           border-color: #05290d;
+//         }
+
+//         // .btn-secondary {
+//         //   background-color: #6c757d; // אפור כהה
+//         //   border-color: #6c757d;
+//         // }
+//       }
+//     }
+//   }
+// }
+
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+
+  .edit-recipe-form {
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: none;
+    }
+
+    .card-title {
+      margin-bottom: 0;
+    }
+
+    .card-body {
+      .form-label {
+        font-weight: bold;
+      }
+
+      .invalid-feedback {
+        display: block;
+        margin-top: 5px;
+        color: #dc3545;
+      }
+
+      .button-container {
+        margin-top: 20px;
+        text-align: center;
+
+        button {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

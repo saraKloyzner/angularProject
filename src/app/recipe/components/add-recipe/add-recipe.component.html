@@ -1,0 +1,135 @@
+<!-- <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput formControlName="recipeName" placeholder="שם המתכון" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select formControlName="categoryId" placeholder="קטגוריה" required>
+      <mat-option *ngFor="let category of categories" [value]="category.name">
+        {{ category.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      type="number"
+      formControlName="preparationTimeInMinutes"
+      placeholder="זמן הכנה (דקות)"
+      required
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select formControlName="difficultyLevel" placeholder="דרגת קושי" required>
+      <mat-option value="1"> very easy</mat-option>
+      <mat-option value="2">easy</mat-option>
+      <mat-option value="3">medium</mat-option>
+      <mat-option value="3">Hard</mat-option>
+      <mat-option value="3"> very difficult</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div formArrayName="ingredients">
+    <div *ngFor="let ingredient of recipeForm.get('ingredients').controls; let i = index">
+      <mat-form-field>
+        <input matInput [formControlName]="i" placeholder="רכיב" required>
+        <button mat-icon-button (click)="removeIngredient(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" type="button" (click)="addIngredient()">הוסף רכיב</button>
+
+  <div formArrayName="instructions">
+    <div *ngFor="let instruction of recipeForm.get('instructions').controls; let i = index">
+      <mat-form-field>
+        <input matInput [formControlName]="i" placeholder="הוראה" required>
+        <button mat-icon-button (click)="removeInstructions(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" type="button" (click)="addInstruction()">הוסף הוראה</button>
+
+
+
+
+  <mat-form-field>
+    <input matInput formControlName="imagePath" placeholder="imagePath(Optional)" required="" >
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">שמור</button>
+</form> 
+
+
+
+ -->
+
+
+ <div class="container">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="edit-recipe-form">
+    <mat-form-field>
+      <input matInput formControlName="recipeName" placeholder="שם המתכון" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select formControlName="categoryId" placeholder="קטגוריה" required>
+        <mat-option *ngFor="let category of categories" [value]="category.name">
+          {{ category.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        formControlName="preparationTimeInMinutes"
+        placeholder="זמן הכנה (דקות)"
+        required
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="difficultyLevel" placeholder="דרגת קושי" required>
+        <mat-option value="1"> very easy</mat-option>
+        <mat-option value="2">easy</mat-option>
+        <mat-option value="3">medium</mat-option>
+        <mat-option value="3">Hard</mat-option>
+        <mat-option value="3"> very difficult</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div formArrayName="ingredients">
+      <div *ngFor="let ingredient of recipeForm.get('ingredients').controls; let i = index">
+        <mat-form-field>
+          <input matInput [formControlName]="i" placeholder="רכיב" required>
+          <button mat-icon-button (click)="removeIngredient(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" type="button" (click)="addIngredient()">הוסף רכיב</button>
+
+    <div formArrayName="instructions">
+      <div *ngFor="let instruction of recipeForm.get('instructions').controls; let i = index">
+        <mat-form-field>
+          <input matInput [formControlName]="i" placeholder="הוראה" required>
+          <button mat-icon-button (click)="removeInstructions(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" type="button" (click)="addInstruction()">הוסף הוראה</button>
+
+    <mat-form-field>
+      <input matInput formControlName="imagePath" placeholder="imagePath(Optional)" required="" >
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">שמור</button>
+  </form>
+</div>

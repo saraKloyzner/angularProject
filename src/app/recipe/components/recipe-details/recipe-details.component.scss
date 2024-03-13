@@ -1,0 +1,55 @@
+// .card {
+//     max-width: 500px;
+//     margin: auto;
+//   }
+  
+//   .card-img-top {
+//     width: 100%;
+//     height: auto;
+//   }
+  
+//   .card-text {
+//     margin-bottom: 0.5rem;
+//   }
+  
+//   .list-group {
+//     margin-top: 1rem;
+//   }
+  
+//   .list-group-item {
+//     background-color: transparent;
+//     border: none;
+//   }
+  
+
+
+
+  .recipe-card {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem; /* הוספת מרווח טוב יותר */
+    border-radius: 1rem; /* עיגול קל של פינות */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל קל לעומק */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .recipe-card img {
+    max-width: 100%;
+    border-radius: 1rem; /* התאמה לפינות הכרטיס */
+  }
+  
+  /* התאמה למסכים שונים באמצעות מחלקות MDB */
+  @media (max-width: 768px) {
+    .recipe-card {
+      max-width: 90vw; /* התאמת רוחב למסכים קטנים יותר */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .recipe-card {
+      max-width: 100vw; /* רוחב מלא במסכים קטנים מאוד */
+      padding: 1rem; /* הפחתת מרווח להתאמה טובה יותר */
+    }
+  }
+    

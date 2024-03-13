@@ -1,0 +1,17 @@
+#flex {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* שלושה עמודות שוות */
+    grid-gap: 20px; /* מרווח בין הכרטיסים */
+    padding: 20px; /* מרווח סביב האלמנט הראשי */
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 0 10px; /* מרווח בין הכרטיסים בעמודה */
+  }
+  

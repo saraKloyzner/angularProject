@@ -1,0 +1,39 @@
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+
+  form {
+    background-color: #bbbfbb; /* צבע רקע */
+    padding: 20px;
+    border-radius: 10px;
+
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 20px;
+
+      input {
+        color: #05290d; /* צבע טקסט */
+      }
+    }
+
+    .button-container {
+      text-align: center;
+
+      button {
+        margin: 0 5px;
+        background-color: #05290d; /* צבע רקע כפתור */
+        color: #fff; /* צבע טקסט כפתור */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"] {
+        background-color: #05290d; /* צבע רקע כפתור שמור */
+      }
+    }
+  }
+}
