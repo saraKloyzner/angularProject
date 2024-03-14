@@ -1,130 +1,15 @@
-<!-- 
-<form [formGroup]="addForm">
-    <div>
-      <mat-form-field class="example-full-width">
-        <mat-label>Name</mat-label>
-        <input matInput type="text" formControlName="name" required>
-        <mat-error *ngIf="addForm.get('name')?.errors?.['required']">
-          Enter Name
-        </mat-error>
-      </mat-form-field>
-    </div>
-  
-    <div>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>password</mat-label>
-        <input matInput type="password" formControlName="password" required>
-        <mat-error *ngIf="addForm.get('password')?.errors?.['required']">
-           Enter password
-          </mat-error>
-          
-
-      </mat-form-field>
-    </div>
-  
-    <button  mat-fab extended color="accent"  (click)="save()" [disabled]="!addForm.valid">
-        <mat-icon>favorite</mat-icon>
-        Enter
-      </button>
-
-
-  </form>
-  
- -->
-
-
- <form [formGroup]="addForm" class="login-form">
-    <div class="form-container">
-      <mat-form-field class="example-full-width">
-        <mat-label>שם</mat-label>
-        <input matInput type="text" formControlName="name" required>
-        <mat-error *ngIf="addForm.get('name')?.errors?.['required']">
-          אנא הזן שם
-        </mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>סיסמה</mat-label>
-        <input matInput type="password" formControlName="password" required>
-        <mat-error *ngIf="addForm.get('password')?.errors?.['required']" >
-          אנא הזן סיסמה
-        </mat-error>
-      </mat-form-field>
-   
-    </div>
-    <button mat-raised-button color="primary" (click)="save()" [disabled]="!addForm.valid">
-      התחבר
-    </button>
-  </form>
-  
-
-   <!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"> -->
-  <!-- Add your custom stylesheet link -->
-<!-- </head>
-
-<body> -->
-  <!-- <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">התחברות</h5>
-            <form>
-              <div class="form-group">
-                <label for="name">שם</label>
-                <input type="text" class="form-control" id="name" placeholder="הזן את שמך">
-              </div>
-              <div class="form-group">
-                <label for="password">סיסמה</label>
-                <input type="password" class="form-control" id="password" placeholder="הזן את הסיסמה שלך">
-              </div>
-              <button type="submit" class="btn btn-primary btn-block" (click)="save()">התחבר</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script> -->
-  <!-- Add any additional scripts you need -->
-<!-- </body>
-
-</html> -->
-
-
-<!-- <form [formGroup]="addForm" class="login-form">
+<form [formGroup]="addForm" class="login-form">
   <div class="form-container">
-    <mat-form-field class="example-full-width">
-      <mat-label>שם</mat-label>
-      <input matInput type="text" formControlName="name" required>
-      <mat-error *ngIf="addForm.get('name')?.errors?.['required']">
-        אנא הזן שם
-      </mat-error>
-    </mat-form-field>
-    <br>
-    <mat-form-field class="example-full-width">
-      <mat-label>סיסמה</mat-label>
-      <input matInput type="password" formControlName="password" required>
-      <mat-error *ngIf="addForm.get('password')?.errors?.['required']" >
-        אנא הזן סיסמה
-      </mat-error>
-    </mat-form-field>
- 
+    <div class="md-form">
+      <input type="text" id="name" class="form-control" formControlName="name" required>
+      <label for="name">Name</label>
+      <div *ngIf="addForm.get('name')?.errors?.['required']" class="text-danger">Please enter a name</div>
+    </div>
+    <div class="md-form">
+      <input type="password" id="password" class="form-control" formControlName="password" required>
+      <label for="password">Password</label>
+      <div *ngIf="addForm.get('password')?.errors?.['required']" class="text-danger">Please enter a password</div>
+    </div>
   </div>
-  <button mat-raised-button color="primary" (click)="save()" [disabled]="!addForm.valid">
-    התחבר
-  </button>
-</form> -->
+  <button mat-raised-button color="primary" (click)="save()" [disabled]="!addForm.valid">Login</button>
+</form>

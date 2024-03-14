@@ -1,163 +1,32 @@
-<!-- <p>register works!</p>
 <form [formGroup]="registerForm" class="register-form">
-    <h2>הרשמה</h2>
-  
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>שם</mat-label>
-        <input matInput type="text" formControlName="name" required>
-        <mat-error *ngIf="registerForm.get('name')?.errors?.['required']">
-          אנא הזן שם
-        </mat-error>
-      </mat-form-field>
-    </div>
-  
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>סיסמה</mat-label>
-        <input matInput type="password" formControlName="password" required>
-        <mat-error *ngIf="registerForm.get('password')?.errors?.['required']">
-          אנא הזן סיסמה
-        </mat-error>
-      </mat-form-field>
-    </div>
-  
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>דוא"ל</mat-label>
-        <input matInput type="email" formControlName="email" required>
-        <mat-error *ngIf="registerForm.get('email')?.errors?.['required']">
-          אנא הזן דוא"ל
-        </mat-error>
-        <mat-error *ngIf="registerForm.get('email')?.errors?.['email']">
-          כתובת דוא"ל לא חוקית
-        </mat-error>
-      </mat-form-field>
-    </div>
-  
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>כתובת</mat-label>
-        <input matInput type="text" formControlName="address" required>
-        <mat-error *ngIf="registerForm.get('address')?.errors?.['required']">
-          אנא הזן כתובת
-        </mat-error>
-      </mat-form-field>
-    </div>
-  
-    <div class="form-group">
-      <button mat-raised-button color="primary" (click)="register()">הרשם</button>
-    </div>
-  
-    <div *ngIf="userExists">
-      <p class="error-message">משתמש עם שם זה כבר קיים.</p>
-    </div>
-  </form>
-   -->
+  <h2 class="text-center mb-4">Registration</h2>
 
-
-  <!-- <form [formGroup]="registerForm" class="register-form">
-    <h2>הרשמה</h2>
-
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>שם</mat-label>
-        <input matInput type="text" formControlName="name" required>
-        <mat-error *ngIf="registerForm.get('name')?.errors?.['required']">
-          אנא הזן שם
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>סיסמה</mat-label>
-        <input matInput type="password" formControlName="password" required>
-        <mat-error *ngIf="registerForm.get('password')?.errors?.['required']">
-          אנא הזן סיסמה
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>דוא"ל</mat-label>
-        <input matInput type="email" formControlName="email" required>
-        <mat-error *ngIf="registerForm.get('email')?.errors?.['required']">
-          אנא הזן דוא"ל
-        </mat-error>
-        <mat-error *ngIf="registerForm.get('email')?.errors?.['email']">
-          כתובת דוא"ל לא חוקית
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>כתובת</mat-label>
-        <input matInput type="text" formControlName="address" required>
-        <mat-error *ngIf="registerForm.get('address')?.errors?.['required']">
-          אנא הזן כתובת
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <button mat-raised-button color="primary" (click)="register()">הרשם</button> -->
-
-
-      <!-- register.component.html -->
-<form [formGroup]="registerForm" class="register-form">
-  <h2>הרשמה</h2>
-
-  <div class="form-group">
-    <mat-form-field class="example-full-width">
-      <mat-label>שם</mat-label>
-      <input matInput type="text" formControlName="userName" required>
-      <mat-error *ngIf="registerForm.get('userName')?.errors?.['required']">
-        אנא הזן שם
-      </mat-error>
-    </mat-form-field>
+  <div class="form-outline mb-4">
+    <input type="text" id="userName" class="form-control" formControlName="userName" />
+    <label class="form-label" for="userName">Name</label>
+    <div *ngIf="registerForm.get('userName')?.errors?.['required']" class="text-danger">Please enter a name</div>
   </div>
 
-  <div class="form-group">
-    <mat-form-field class="example-full-width">
-      <mat-label>סיסמה</mat-label>
-      <input matInput type="password" formControlName="password" required>
-      <mat-error *ngIf="registerForm.get('password')?.errors?.['required']">
-        אנא הזן סיסמה
-      </mat-error>
-    </mat-form-field>
+  <div class="form-outline mb-4">
+    <input type="password" id="password" class="form-control" formControlName="password" />
+    <label class="form-label" for="password">Password</label>
+    <div *ngIf="registerForm.get('password')?.errors?.['required']" class="text-danger">Please enter a password</div>
   </div>
 
-  <div class="form-group">
-    <mat-form-field class="example-full-width">
-      <mat-label>דוא"ל</mat-label>
-      <input matInput type="email" formControlName="email" required>
-      <mat-error *ngIf="registerForm.get('email')?.errors?.['required']">
-        אנא הזן דוא"ל
-      </mat-error>
-      <mat-error *ngIf="registerForm.get('email')?.errors?.['email']">
-        כתובת דוא"ל לא חוקית
-      </mat-error>
-    </mat-form-field>
+  <div class="form-outline mb-4">
+    <input type="email" id="email" class="form-control" formControlName="email" />
+    <label class="form-label" for="email">Email</label>
+    <div *ngIf="registerForm.get('email')?.errors?.['required']" class="text-danger">Please enter an email</div>
+    <div *ngIf="registerForm.get('email')?.errors?.['email']" class="text-danger">Invalid email address</div>
   </div>
 
-  <div class="form-group">
-    <mat-form-field class="example-full-width">
-      <mat-label>כתובת</mat-label>
-      <input matInput type="text" formControlName="address" required>
-      <mat-error *ngIf="registerForm.get('address')?.errors?.['required']">
-        אנא הזן כתובת
-      </mat-error>
-    </mat-form-field>
+  <div class="form-outline mb-4">
+    <input type="text" id="address" class="form-control" formControlName="address" />
+    <label class="form-label" for="address">Address</label>
+    <div *ngIf="registerForm.get('address')?.errors?.['required']" class="text-danger">Please enter an address</div>
   </div>
 
-  <div class="form-group">
-    <button mat-raised-button color="primary" (click)="register()" [disabled]="!registerForm.valid">הרשם</button>
-  </div>
+  <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!registerForm.valid">Register</button>
 
-  <div *ngIf="userExists">
-    <p class="error-message">משתמש עם שם זה כבר קיים.</p>
-  </div>
+  <div *ngIf="userExists" class="text-danger">A user with this name already exists.</div>
 </form>

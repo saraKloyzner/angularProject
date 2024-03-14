@@ -1,9 +1,4 @@
 
-<!-- <div *ngFor="let recipe of allRecipes" id="flex" style="display: inline-flex; grid-gap: 20px; justify-content: space-evenly;">
-    <app-small-recipe [smallRecipe]="recipe" ></app-small-recipe>
-</div>
- -->
-
  <div id="flex">
     <ng-container *ngFor="let recipe of allRecipes; let i = index">
       <div *ngIf="i % 3 === 0" class="row"> <!-- לולאה על כל שלושה אלמנטים -->

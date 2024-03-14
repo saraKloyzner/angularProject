@@ -115,6 +115,7 @@ export class RecipeDetailsComponent implements OnInit {
       next:(del)=>{
         this.isVeteranUser=false;
         console.log("the recipe delete",del)
+        this.router.navigate(['/recipe']);
       },
       error:(delerr)=>{
         console.log("the recipe no delete",delerr)

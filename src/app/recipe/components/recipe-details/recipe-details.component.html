@@ -1,104 +1,26 @@
-<!-- <div class="container mt-4">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card">
-          <img [src]="recipe.imagePath" class="card-img-top" alt="Recipe Image">
-          <div class="card-body">
-            <h5 class="card-title">{{ recipe.recipeName }}</h5>
-            <p class="card-text">Preparation Time: {{ recipe.preparationTimeInMinutes }} minutes</p>
-            <p class="card-text">Difficulty Level: {{ recipe.difficultyLevel }}</p>
-            <p class="card-text">Category: {{ recipe.categoryId }}</p>
-            <p class="card-text">Date Added: {{ recipe.dateAdded | date }}</p>
-            <h6 class="card-subtitle mb-2 text-muted">Ingredients:</h6>
-            <ul class="list-group">
-              <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
-            </ul>
-            <h6 class="card-subtitle mb-2 text-muted">Instructions:</h6>
-            <ol class="list-group">
-              <li class="list-group-item" *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-   -->
 
-
-   <!-- <div class="container mt-4">
-    <mat-card class="recipe-card">
-      <img mat-card-image [src]="recipe.imagePath" alt="Recipe Image">
-      <mat-card-content>
-        <h2 mat-card-title>{{ recipe.recipeName }}</h2>
-        <p class="card-text">Preparation Time: {{ recipe.preparationTimeInMinutes }} minutes</p>
-        <p class="card-text">Difficulty Level: {{ recipe.difficultyLevel }}</p>
-        <p class="card-text">Category: {{ recipe.categoryId }}</p>
-        <p class="card-text">Date Added: {{ recipe.dateAdded | date }}</p>
-        <h3>Ingredients:</h3>
-        <ul>
-          <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
-        </ul>
-        <h3>Instructions:</h3>
-        <ol>
-          <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
-        </ol>
-      </mat-card-content>
-    </mat-card>
-  </div> -->
-
-  <!-- <div class="card mb-4">
-    <div class="row">
-      <div class="col-md-6">
-        <img mat-card-image [src]="recipe.imagePath" alt="תמונת מתכון" class="img-fluid rounded-start">
-      </div>
-      <div class="col-md-6">
-        <div class="card-body">
-          <h2 mat-card-title>{{ recipe.recipeName }}</h2>
-          <p class="card-text">זמן הכנה: {{ recipe.preparationTimeInMinutes }} דקות</p>
-          <p class="card-text">רמת קושי: {{ recipe.difficultyLevel | difficultyLevel }}</p>
-
-          <p class="card-text">קטגוריה: {{ recipe.categoryId }}</p>
-          <p class="card-text">תאריך הוספה: {{ recipe.dateAdded | date }}</p>
-          <h3>מרכיבים:</h3>
-          <ul>
-            <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
-          </ul>
-          <h3>הוראות:</h3>
-          <ol>
-            <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  
-  
 
   <div class="card mb-4">
     <div class="row">
       <div class="col-md-6">
-        <img mat-card-image src="{{ recipe.imagePath }}" alt="תמונת מתכון" class="img-fluid rounded-start">
-        <!-- <img mat-card-image [src]="recipe.imagePath" alt="תמונת מתכון" class="img-fluid rounded-start"> -->
+        <img mat-card-image src="{{ recipe.imagePath }}" alt="Recipe Image" class="img-fluid rounded-start">
       </div>
       <div class="col-md-6">
         <div class="card-body">
           <h2 mat-card-title>{{ recipe.recipeName }}</h2>
-          <p class="card-text">זמן הכנה: {{ recipe.preparationTimeInMinutes }} דקות</p>
-          <p class="card-text">רמת קושי: <span [innerHTML]="recipe.difficultyLevel | difficultyLevel"></span></p> <!-- שימוש בפייפ -->
-          <p class="card-text">קטגוריה: {{ category.name }} <i class="{{ category.iconPath }}"></i></p>
-
-
-          <!-- <p class="card-text">קטגוריה: {{ category.name }} <span [innerHTML]="category.iconPath"></span></p> -->
-          <p class="card-text">תאריך הוספה: {{ recipe.dateAdded | date }}</p>
-          <h3>מרכיבים:</h3>
+          <p class="card-text">Preparation Time: {{ recipe.preparationTimeInMinutes }} minutes</p>
+          <p class="card-text">Difficulty Level: <span [innerHTML]="recipe.difficultyLevel | difficultyLevel"></span></p> <!-- Using a pipe -->
+          <p class="card-text">Category: {{ category.name }} <i class="{{ category.iconPath }}"></i></p>
+          <p class="card-text">Date Added: {{ recipe.dateAdded | date }}</p>
+          <h3>Ingredients:</h3>
           <ul>
             <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
           </ul>
-          <h3>הוראות:</h3>
+          <h3>Instructions:</h3>
           <ol>
             <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
           </ol>
-          <button *ngIf="!isVeteranUser" class="btn btn-primary" (clickl)="deleteRecipe()">Delete Recipe</button>
+          <button *ngIf="!isVeteranUser" class="btn btn-primary" (click)="deleteRecipe()">Delete Recipe</button>
           <button *ngIf="!isVeteranUser" class="btn btn-secondary" (click)="editRecipe()">Edit Recipe</button>
         </div>
       </div>
