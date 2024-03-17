@@ -20,7 +20,7 @@ This project is an Angular-based website for managing recipes. The frontend is d
 ## Getting Started
 1. Clone the repository
 ```
-git clone <repository-url>
+git clone https://github.com/saraKloyzner/angularProject.git
 ```
 2. Navigate to the project directory
 ```
