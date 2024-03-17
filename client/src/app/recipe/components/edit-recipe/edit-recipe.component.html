@@ -57,8 +57,6 @@
             <div *ngIf="recipeForm.get('preparationTimeInMinutes')?.hasError('required')" class="invalid-feedback">
               Preparation time is required
             </div>
-          
-          
             <div *ngIf="recipeForm.get('preparationTimeInMinutes')?.hasError('min')" class="invalid-feedback">
               Please enter a positive number
             </div>
@@ -82,7 +80,10 @@
           </div>
   
           <div class="mb-3">
+        
             <label for="ingredients" class="form-label">Ingredients</label>
+            <p class="instruction-text">Please separate each ingredient with a comma (,).</p>
+
             <textarea class="form-control" id="ingredients" formControlName="ingredients" required></textarea>
             <div *ngIf="recipeForm.get('ingredients')?.hasError('required')" class="invalid-feedback">
               Ingredients are required
@@ -90,6 +91,7 @@
           </div>
   
           <div class="mb-3">
+            <p class="instruction-text">Please separate each instruction with a comma (,).</p>
             <label for="instructions" class="form-label">Instructions</label>
             <textarea class="form-control" id="instructions" formControlName="instructions" required></textarea>
             <div *ngIf="recipeForm.get('instructions')?.hasError('required')" class="invalid-feedback">

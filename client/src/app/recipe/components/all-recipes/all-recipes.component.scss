@@ -1,28 +1,194 @@
+// #flex {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr); /* שלושה עמודות שוות */
+//     grid-gap: 20px; /* מרווח בין הכרטיסים */
+//     padding: 20px; /* מרווח סביב האלמנט הראשי */
+//   }
+  
+//   .row {
+//     display: flex;
+//     justify-content: space-evenly;
+//   }
+  
+//   .column {
+//     flex: 1;
+//     margin: 0 10px; /* מרווח בין הכרטיסים בעמודה */
+//   }
+  
+
+
+
+
+
+
+
+//   // Custom styles for AllRecipesComponent
+
+// // Container styles
+// // .container {
+// //   margin-top: 4rem;
+
+// //   // Flexbox setup
+// //   display: flex;
+// //   justify-content: space-between;
+// //   align-items: center;
+
+// //   // Input group styles
+// //   .input-group {
+// //     flex: 1; // Each input group takes equal space
+// //     margin-right: 1rem; // Add some space between input groups
+
+// //     // Search input style
+// //     input[type="text"],
+// //     input[type="number"] {
+// //       width: 100%; // Take up full width of input group
+// //       border-radius: 0.5rem; // Add border radius
+// //       padding: 0.5rem; // Add padding
+// //     }
+
+// //     // Category select style
+// //     .mat-form-field {
+// //       width: 100%; // Take up full width of input group
+      
+// //       // Wrapper styles
+// //       .mat-form-field-wrapper {
+// //         border-radius: 0.5rem; // Add border radius
+// //         background-color: #f8f9fa; // Change background color
+// //         box-shadow: 0 0 10px rgba(0,0,0,0.1); // Add box shadow
+// //       }
+
+// //       // Flex container styles
+// //       .mat-form-field-flex {
+// //         padding: 0.5rem; // Add padding
+// //       }
+
+// //       // Label styles
+// //       mat-label {
+// //         color: #333; // Change label color
+// //       }
+
+// //       // Select styles
+// //       mat-select {
+// //         border-radius: 0.5rem; // Add border radius
+// //         background-color: transparent; // Make select background transparent
+// //         &:focus {
+// //           outline: none; // Remove focus outline
+// //         }
+// //       }
+
+// //       // Option styles
+// //       .mat-option {
+// //         padding: 0.5rem; // Add padding
+// //       }
+// //     }
+// //   }
+// // }
+
+
+// .container {
+//   margin-top: 4rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .input-group {
+//   flex: 1;
+//   margin-right: 1rem;
+// }
+
+// .input-group input[type="text"],
+// .input-group input[type="number"] {
+//   width: 100%;
+//   border-radius: 0.5rem;
+//   padding: 0.5rem;
+// }
+
+// .mat-form-field {
+//   width: 100%;
+// }
+
+// .mat-form-field .mat-form-field-wrapper {
+//   border-radius: 0.5rem;
+//   background-color: #f8f9fa;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+// }
+
+// .mat-form-field .mat-form-field-flex {
+//   padding: 0.5rem;
+// }
+
+// .mat-form-field mat-label {
+//   color: #333;
+// }
+
+// .mat-form-field mat-select {
+//   border-radius: 0.5rem;
+//   background-color: transparent;
+//   &:focus {
+//     outline: none;
+//   }
+// }
+
+// .mat-form-field .mat-option {
+//   padding: 0.5rem;
+// }
+
+
 #flex {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* שלושה עמודות שוות */
-    grid-gap: 20px; /* מרווח בין הכרטיסים */
-    padding: 20px; /* מרווח סביב האלמנט הראשי */
-  }
-  
-  .row {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .column {
-    flex: 1;
-    margin: 0 10px; /* מרווח בין הכרטיסים בעמודה */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* שלושה עמודות שוות */
+  grid-gap: 20px; /* מרווח בין הכרטיסים */
+  padding: 20px; /* מרווח סביב האלמנט הראשי */
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px; /* מרווח בין הכרטיסים בעמודה */
+}
 
 
 
+// Target the containers for each input element
+.col-md-4 {
+// Align contents to the left
+display: flex;
+align-items: center; /* For vertical centering */
+justify-content: flex-start; /* For left alignment */
+
+// Fine-tune spacing for better readability
+margin-bottom: 15px;
+
+// Style for the label
+.mat-label {
+  margin-right: 10px; /* Adjust space between label and input */
+}
+}
+.container .row {
+/* Apply flexbox to the row container for horizontal alignment */
+display: flex-start;
+flex-wrap: wrap; /* Allow wrapping if needed */
+justify-content: flex-start; /* Align elements to the left */
+}
+
+.col-md-4 {
+/* Remove unnecessary flex properties */
+display: block; /* Default display for columns */
+margin-bottom: 15px; /* Adjust spacing for better readability */
+
+.mat-form-field {
+  /* Target the form field for potential margin adjustments */
+  margin-right: 0; /* Remove any right margin for proper alignment */
+}
+}
 
 
-
-
-  // Custom styles for AllRecipesComponent
+// Custom styles for AllRecipesComponent
 
 // Container styles
 // .container {
@@ -49,7 +215,7 @@
 //     // Category select style
 //     .mat-form-field {
 //       width: 100%; // Take up full width of input group
-      
+    
 //       // Wrapper styles
 //       .mat-form-field-wrapper {
 //         border-radius: 0.5rem; // Add border radius
@@ -86,50 +252,50 @@
 
 
 .container {
-  margin-top: 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+margin-top: 4rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .input-group {
-  flex: 1;
-  margin-right: 1rem;
+flex: 1;
+margin-right: 1rem;
 }
 
 .input-group input[type="text"],
 .input-group input[type="number"] {
-  width: 100%;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
+width: 100%;
+border-radius: 0.5rem;
+padding: 0.5rem;
 }
 
 .mat-form-field {
-  width: 100%;
+width: 100%;
 }
 
 .mat-form-field .mat-form-field-wrapper {
-  border-radius: 0.5rem;
-  background-color: #f8f9fa;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 0.5rem;
+background-color: #f8f9fa;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .mat-form-field .mat-form-field-flex {
-  padding: 0.5rem;
+padding: 0.5rem;
 }
 
 .mat-form-field mat-label {
-  color: #333;
+color: #333;
 }
 
 .mat-form-field mat-select {
-  border-radius: 0.5rem;
-  background-color: transparent;
-  &:focus {
-    outline: none;
-  }
+border-radius: 0.5rem;
+background-color: transparent;
+&:focus {
+  outline: none;
+}
 }
 
 .mat-form-field .mat-option {
-  padding: 0.5rem;
+padding: 0.5rem;
 }
