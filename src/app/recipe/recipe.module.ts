@@ -18,6 +18,7 @@ import { EditRecipeComponent } from './components/edit-recipe/edit-recipe.compon
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { AllRecipesComponent } from './components/all-recipes/all-recipes.component';
 import { DifficultyLevelPipe } from './difficulty-level.pipe';
+import {FormatPreparationTimePipe} from './format-preparation-time-pipe.pipe'
 @NgModule({
   declarations: [
     SmallRecipeComponent,
@@ -25,7 +26,8 @@ import { DifficultyLevelPipe } from './difficulty-level.pipe';
     EditRecipeComponent,
     RecipeDetailsComponent,
     AllRecipesComponent,
-    DifficultyLevelPipe
+    DifficultyLevelPipe,
+    FormatPreparationTimePipe
   ],
   imports: [
     CommonModule,

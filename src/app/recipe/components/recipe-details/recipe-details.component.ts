@@ -93,10 +93,23 @@ export class RecipeDetailsComponent implements OnInit {
             }
           });
           console.log(this.recipe);
-  
+
           // בדיקה והגדרת ערך של IsVeteranUser לפי הנתונים מהשרת
-          if (sessionStorage.getItem(this.recipe.userId.toString()) !== null) {
+          console.log((sessionStorage.getItem), sessionStorage.getItem("userId")?.toString())
+          console.log(this.recipe.userId.toString(), this.recipe.userId.toString())
+          console.log("true", sessionStorage.getItem("userId") == this.recipe.userId.toString())
+          // if (sessionStorage.getItem("userId")?.toString()===this.recipe.userId.toString()) {
+          // if (Number.isInteger(sessionStorage.getItem("userId")) && sessionStorage.getItem("userId") === this.recipe.userId) {
+          const storedUserId = sessionStorage.getItem("userId");
+          console.log(("storedUserId"),storedUserId)
+          console.log(this.recipe.userId)
+          if (storedUserId && Number(storedUserId) === this.recipe.userId) {
             this.isVeteranUser = true;
+            console.log("if", this.isVeteranUser)
+          }
+          else {
+            this.isVeteranUser = false;
+            console.log("else", this.isVeteranUser)
           }
         },
         error: (err) => {
@@ -105,20 +118,20 @@ export class RecipeDetailsComponent implements OnInit {
       });
     });
   }
-  
-  editRecipe(){
+
+  editRecipe() {
     this.router.navigate(['/recipe/edit-recipe', this.recipe.recipeId]);
-    this.isVeteranUser=false;
+    this.isVeteranUser = false;
   }
-  deleteRecipe(){
+  deleteRecipe() {
     this._recipeServise.deleteById(this.recipe.recipeId).subscribe({
-      next:(del)=>{
-        this.isVeteranUser=false;
-        console.log("the recipe delete",del)
+      next: (del) => {
+        this.isVeteranUser = false;
+        console.log("the recipe delete", del)
         this.router.navigate(['/recipe']);
       },
-      error:(delerr)=>{
-        console.log("the recipe no delete",delerr)
+      error: (delerr) => {
+        console.log("the recipe no delete", delerr)
       }
     })
   }

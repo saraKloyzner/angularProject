@@ -23,29 +23,55 @@
             </div>
           </div>
   
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="categoryId" class="form-label">Category ID</label>
-            <input type="text" class="form-control" id="categoryId" formControlName="categoryId" required>
+            <input type="number" class="form-control" id="categoryId" formControlName="categoryId" required>
             <div *ngIf="recipeForm.get('categoryId')?.hasError('required')" class="invalid-feedback">
               Category ID is required
             </div>
+          </div> -->
+          <div class="mb-4">
+            <label for="difficultyLevel" class="form-label">Difficulty Level</label>
+            <select formControlName="difficultyLevel" id="difficultyLevel" class="form-select" required>
+              <option value="1">Very Easy</option>
+              <option value="2">Easy</option>
+              <option value="3">Medium</option>
+              <option value="4">Hard</option>
+              <option value="5">Very Difficult</option>
+            </select>
+            <div *ngIf="recipeForm.get('difficultyLevel')?.hasError('required')" class="invalid-feedback">
+              Difficulty Level is required
+            </div>
           </div>
   
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="preparationTime" class="form-label">Preparation Time (minutes)</label>
             <input type="number" class="form-control" id="preparationTime" formControlName="preparationTimeInMinutes" required>
             <div *ngIf="recipeForm.get('preparationTimeInMinutes')?.hasError('required')" class="invalid-feedback">
               Preparation time is required
             </div>
-          </div>
-  
+          </div> -->
           <div class="mb-3">
+            <label for="preparationTime" class="form-label">Preparation Time (minutes)</label>
+            <input type="number" class="form-control" id="preparationTime" formControlName="preparationTimeInMinutes" required min="0">
+            <div *ngIf="recipeForm.get('preparationTimeInMinutes')?.hasError('required')" class="invalid-feedback">
+              Preparation time is required
+            </div>
+          
+          
+            <div *ngIf="recipeForm.get('preparationTimeInMinutes')?.hasError('min')" class="invalid-feedback">
+              Please enter a positive number
+            </div>
+          </div>
+          
+  
+          <!-- <div class="mb-3">
             <label for="difficultyLevel" class="form-label">Difficulty Level</label>
             <input type="text" class="form-control" id="difficultyLevel" formControlName="difficultyLevel" required>
             <div *ngIf="recipeForm.get('difficultyLevel')?.hasError('required')" class="invalid-feedback">
               Difficulty level is required
             </div>
-          </div>
+          </div> -->
   
           <div class="mb-3">
             <label for="imagePath" class="form-label">Image Path</label>

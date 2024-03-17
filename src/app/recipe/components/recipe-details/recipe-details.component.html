@@ -8,7 +8,9 @@
       <div class="col-md-6">
         <div class="card-body">
           <h2 mat-card-title>{{ recipe.recipeName }}</h2>
-          <p class="card-text">Preparation Time: {{ recipe.preparationTimeInMinutes }} minutes</p>
+          <!-- <p class="card-text">Preparation Time: {{ recipe.preparationTimeInMinutes |formatPrepyarationTime }} minutes</p> -->
+          <p class="card-text">Preperation Time:{{ recipe.preparationTimeInMinutes | formatPreparationTime }}</p>
+
           <p class="card-text">Difficulty Level: <span [innerHTML]="recipe.difficultyLevel | difficultyLevel"></span></p> <!-- Using a pipe -->
           <p class="card-text">Category: {{ category.name }} <i class="{{ category.iconPath }}"></i></p>
           <p class="card-text">Date Added: {{ recipe.dateAdded | date }}</p>
@@ -20,8 +22,8 @@
           <ol>
             <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
           </ol>
-          <button *ngIf="!isVeteranUser" class="btn btn-primary" (click)="deleteRecipe()">Delete Recipe</button>
-          <button *ngIf="!isVeteranUser" class="btn btn-secondary" (click)="editRecipe()">Edit Recipe</button>
+          <button *ngIf="isVeteranUser" class="btn btn-primary" (click)="deleteRecipe()">Delete Recipe</button>
+          <button *ngIf="isVeteranUser" class="btn btn-secondary" (click)="editRecipe()">Edit Recipe</button>
         </div>
       </div>
     </div>

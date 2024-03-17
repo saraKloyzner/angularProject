@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   registeruser!: User;
   private timerInterval: any;
   private timer: any;
-
+  public num = 10;
   constructor(
     private fb: FormBuilder,
     private _userService: UserService,
@@ -49,45 +49,98 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  
-
-
 
   register() {
+
     this._userService.addUser(this.registerForm.value).subscribe({
       next: (res) => {
-        this.registeruser = res;
-        console.log(this.registeruser)
-        sessionStorage.setItem(this.registeruser.userId.toString(), this.registeruser.userName);
-        Swal.fire({
-          title: 'הרשמה הסתיימה בהצלחה!',
-          html: 'מעביר אותך להצגת המתכונים...',
-          timer: 2000,
-          timerProgressBar: true,
-          didOpen: () => {
-            Swal.showLoading(null);
-            this.timer = Swal
-            this.timerInterval = setInterval(() => {
-              this.timer.textContent = `${Swal.getTimerLeft()}`;
-            }, 100);
-          },
-          willClose: () => {
-            clearInterval(this.timerInterval);
-          }
-        }).then((result) => {
-          if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer');
-          }
-        });
-        this.router.navigate(["recipe"]);
+        if (res) {
+          this.registeruser = res;
+          this._userService.getUserByName(res.userName).subscribe({
+            next: (t) => {
+              console.log(t);
+              this.num = t.userId;
+              console.log(t.userId)
+              sessionStorage.setItem("userId", t.userId.toString());
+            },
+            error: (e) => {
+              console.log(e)
+            }
+          })
+
+
+          Swal.fire({
+            title: 'Registration successful!',
+            html: 'Redirecting you to recipes...',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading(null);
+              this.timer = Swal;
+              this.timerInterval = setInterval(() => {
+                this.timer.textContent = `${Swal.getTimerLeft()}`;
+              }, 100);
+            },
+            willClose: () => {
+              clearInterval(this.timerInterval);
+            }
+          }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+              console.log('I was closed by the timer');
+            }
+          });
+
+          this.router.navigate(["recipe"]);
+        }
       },
       error: (err) => {
         console.log(err);
       }
     });
-
   }
 }
+
+
+//   register() {
+//     this._userService.addUser(this.registerForm.value).subscribe({
+//       next: (res) => {
+//         this.registeruser = res;
+//         console.log(this.registeruser);
+//         if (this.registeruser) {
+//           this.num = this.registeruser.userId;
+//           sessionStorage.setItem("userId", this.num.toString());
+//         }
+//         //sessionStorage.setItem(this.num.toString(), res.userName);
+
+//         Swal.fire({
+//           title: 'הרשמה הסתיימה בהצלחה!',
+//           html: 'מעביר אותך להצגת המתכונים...',
+//           timer: 2000,
+//           timerProgressBar: true,
+//           didOpen: () => {
+//             Swal.showLoading(null);
+//             this.timer = Swal
+//             this.timerInterval = setInterval(() => {
+//               this.timer.textContent = `${Swal.getTimerLeft()}`;
+//             }, 100);
+//           },
+//           willClose: () => {
+//             clearInterval(this.timerInterval);
+//           }
+//         }).then((result) => {
+//           if (result.dismiss === Swal.DismissReason.timer) {
+//             console.log('I was closed by the timer');
+//           }
+//         });
+//         this.router.navigate(["recipe"]);
+//       },
+//       error: (err) => {
+//         console.log(err);
+//       }
+//     });
+
+//   }
+// }
 
 // async register() {
 //   if (this.registerForm.invalid) {

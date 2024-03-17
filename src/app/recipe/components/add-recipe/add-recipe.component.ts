@@ -16,7 +16,7 @@ export class AddRecipeComponent implements OnInit {
 
   recipeForm: FormGroup | any;
   categories: Category[] = [];
-
+  public userId!:string
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
@@ -27,6 +27,7 @@ export class AddRecipeComponent implements OnInit {
   ngOnInit(): void {
     this.getCategories();
     this.initForm();
+     
   }
 
   initForm(): void {
@@ -71,26 +72,26 @@ export class AddRecipeComponent implements OnInit {
 
 
   onSubmit(): void {
-    // if (this.recipeForm.invalid) {
-    //   console.log("nooooo")
-    //   return;
-    // }
-   
+     
+      // RecipeName: '',
+      const userIdFromStorage = sessionStorage.getItem("userId");
+  
+
     const recipe: Recipe = {
       recipeName: this.recipeForm.get('recipeName').value,
       categoryId: 1,
       // preparationTimeInMinutes: this.recipeForm.get('preparationTimeInMinutes').value,
       //  difficultyLevel: this.recipeForm.get('difficultyLevel').value,
-      preparationTimeInMinutes: 0,
-      difficultyLevel: 0,
+      preparationTimeInMinutes: this.recipeForm.get('preparationTimeInMinutes').value,
+      difficultyLevel: this.recipeForm.get('difficultyLevel').value,
 
       dateAdded: new Date(),
       // categoryId: this.recipeForm.get('categoryId').value,//להחזיר את זה!!
       ingredients: this.ingredients.value,
       instructions: this.instructions.value,
-      userId: 0,
+      userId : userIdFromStorage ? parseInt(userIdFromStorage) : 0,
       // RecipeName: '',
-      imagePath:this.recipeForm.get('imagePath').value,
+      imagePath: this.recipeForm.get('imagePath').value,
       recipeId: 0
     };
 

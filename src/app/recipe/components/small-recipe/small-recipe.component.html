@@ -6,7 +6,9 @@
     <div class="card-content">
       <h3>{{ smallRecipe.recipeName }}</h3>
       <p>
-        <strong>Preparation Time:</strong> {{ smallRecipe.preparationTimeInMinutes }} minutes
+        <!-- <strong>Preparation Time:</strong> {{ smallRecipe.preparationTimeInMinutes }} minutes -->
+        <strong>Preperation time :</strong> {{ smallRecipe.preparationTimeInMinutes|formatPreparationTime }} 
+
       </p>
       <p>
         <p class="card-text">Difficulty Level: <span [innerHTML]="smallRecipe.difficultyLevel | difficultyLevel"></span></p> <!-- Using a pipe -->
