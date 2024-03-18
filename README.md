@@ -42,4 +42,4 @@ Feel free to contribute to this project by opening issues or submitting pull req
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-This README template provides a basic structure for your project. Feel free to customize it further based on your project requirements.
+
